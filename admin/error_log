@@ -1,0 +1,7 @@
+[14-Nov-2014 13:26:29 Asia/Calcutta] PHP Fatal error:  Uncaught exception 'Exception' with message 'DateTime::__construct() [<a href='datetime.--construct'>datetime.--construct</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Calcutta' for 'IST/5.0/no DST' instead' in /home2/indiaval/public_html/admin/application/models/wishlist_model.php:232
+Stack trace:
+#0 /home2/indiaval/public_html/admin/application/models/wishlist_model.php(232): DateTime->__construct()
+#1 /home2/indiaval/public_html/admin/application/controllers/site.php(742): Wishlist_model->exportwishlistofbuilder()
+#2 [internal function]: Site->exportwishlistofbuilder()
+#3 /home2/indiaval/public_html/admin/system/core/CodeIgniter.php(359): call_user_func_array(Array, Array)
+#4 /home2/indiaval/public_html/admin/index.php(202): require_once('/home2/in in /home2/indiaval/public_html/admin/application/models/wishlist_model.php on line 232

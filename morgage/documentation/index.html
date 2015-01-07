@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Mortgage and Amortization Calculator</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Mortgage and Amortization Calculator&rdquo; Documentation by &ldquo;leeb003&rdquo; v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;Mortgage and Amortization Calculator&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 04/07/2013<br>
+					By: Lee Beck<br>
+					Email: <a href="mailto:info@scripthat.com">info@scripthat.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my Mortgage Calculator. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://codecanyon.net/user/leeb003">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#description">Description</a></li>
+			<li><a href="#requirements">Requirements</a></li>
+			<li><a href="#quick">Quick Start</a></li>
+			<li><a href="#install">Installation</a></li>
+			<li><a href="#files">Core Files and Structure</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+
+		</ol>
+		
+		<hr>
+		
+		<h3 id="description"><strong>Description</strong> - <a href="#toc">top</a></h3>
+		<p>
+		  This application is a Mortgage Calculator for your site viewers that gives them an idea of what their monthly breakdown of payment will look 
+		  like.  It includes output of an Amortization schedule along with estimated costs for other items involved in a loan payment (PMI, Taxes etc.).  
+		  The application comes with optional configurable elements, for example you can choose whether or not to let your customers recieve an email with
+		  a pdf of the mortgage information (along with a bcc copy to you if you want).  The Calculator is meant to be simple for site visitors and configurable for you.  
+		  You can also choose to set whether the amortization schedule and loan information appears in a div, a modal, or a popup for the results.
+		  <ol>
+		  <li>Usable on all PHP 5.2+ sites.</li>
+		  <li>Choice of results displayed in a div, modal, or a popup window.</li>
+		  <li>Choice to let users recieve a PDF emailed to them with the results.</li>
+		  <li>Choice to recieve a bcc copy so you can contact the user and generate leads.</li>
+		  <li>No database setup required.</li>
+		  <li>Ajax driven, no page reload.</li>
+		  <li>Attractive calculator.</li>
+		  
+		  </ol>
+		  
+		  
+		</p>
+		<img src="assets/images/calculator.jpg" />
+		<br />
+		<img src="assets/images/calcResults.jpg" />
+		<br />
+		
+		<hr>
+		<h3 id="requirements"><strong>Requirements</strong> - <a href="#toc">top</a></h3>
+		<p>
+		  Requirements
+		  <ol>
+		    <li>A webserver (tested to work in a linux hosting environment)</li>
+			<li>An unzip program to extract the files</li>
+		    <li>PHP 5.2+</li>
+			<li>PHP mail function capability (if using the email PDF option)</li>
+		  </ol>
+		</p>
+		<hr>
+		
+		<h3 id="quick"><strong>Quick Start</strong> - <a href="#toc">top</a></h3>
+		<p>
+		  <ol>
+			<li>To install, extract the zip file included on your webserver.  The default name of the folder is mortgageCalc, make note of this or if you change the name.</li>
+			<li>Make sure config.php is writable if you want to use the admin.php page to make your changes, (else you can hand edit config.php).</li>
+			<li>Either open the webpage (www.yoursite.com/mortgageCalc/admin.php) or open config.php in a file editor.</li>
+			<li>The only settings necessary to change are the website and url variable.  Set website to your website address, and url to the path of the morgage calculator, no trailings slashes (e.g. http://www.yoursite.com/mortgageCalc).</li>
+			<li>Change the other settings as desired.</li>
+			<li>Link to the file from your website page.  You can use the divLoad.php script inline in one of your pages, or you can use the index.php and style it as you want by opening the file you want to include the calculator in and insert<br /> 
+			  <b>&lt;?php include 'mortgageCalc/divLoad.php'; ?&gt;</b> for the div or <br />
+			  <b>&lt;?php include 'mortgageCalc/index.php'; ?&gt;</b> for the whole page (make sure your paths are correct).  You can also link to the index.php page in your html.</li>
+		  </ol>
+		  You are done! Or you can adjust the other settings like email pdf options and default field values etc. back on the admin.php page or in the config.php file.  You may want to remove the admin.php file or rename it to prevent anyone from changing your settings.
+			
+		</p>	    
+		<hr>
+		<h3 id="install"><strong>Installation</strong> - <a href="#toc">top</a></h3>
+		<p>
+		  To install, extract the zip file on your webserver taking note of the directory you put it in.  Open your browser to www.yoursite.com/mortgageCalc/admin.php (or the folder you put it in) to configure
+		  the calculator, or you may choose to hand edit the config.php file with your settings in the root directory.  
+		  If you use the browser config, make sure that config.php is writable (chmod 777 config.php) before you edit it.  After that you can adjust the settings to how you would like and test out the 
+		  demo file (index.php) in the root directory.  You may also test with the files in the examples folder to check your settings.  All configurable items have info tips explaining their usage.  
+		  The config.php file explains each setting as well.
+		<p>
+		  <img src="assets/images/admin.jpg" /><br />
+		  The admin page (or if you edit the config.php by hand) contains the following configurable options:<br />
+		
+		  <ol>
+		    <li><b>Default Home Price</b> - This is the default form field value for Purchase Price.</li>
+		    <li><b>Default Interest Rate</b> - Default form field value for Interest Rate.</li>
+		    <li><b>Default Down Payment</b> - Default form field value for Down Payment Amount.</li>
+		    <li><b>Default Term of Loan</b> - Default form select value for Loan Term.</li>
+
+		    <li><b>Homeowners Insurance Rate</b> - Value for monthly rate to include.</li>
+		    <li><b>PMI</b> - Private Mortgage Insurance Rate per 100,000.00 dollars.</li>
+		
+		    <li><b>Layout</b> - Choose for results to appear in a div, a modal window, or a popup window.</li>
+		    <li><b>Website Address</b> - Your website address, used only for reports sent via PDF to their email.</li>
+		    <li><b>URL</b> - Used for scripts and file reference locations (include http://), no trailing slashes, this setting is required!.</li>
+		    <li><b>Allow Email</b> - Choose to let customers select to recieve a PDF email or not.</li>
+		    <li><b>Your Email Address</b> - Used for bcc to you so you can contact customers that use the form.</li>
+		    <li><b>From Email Address</b> - Used as the from field when an email PDF goes to a visitor (some servers require this field to send mail)</li>
+		    <li><b>Disclaimer</b> - You can edit the disclaimer text shown below the calculator if you would like.</li>
+		  </ol>
+		  <br />
+		  After you finish the install and your settings, you may include the divLoad.php in another php page by using a method similar to the examples/testDiv.php file:<br />
+          <b>
+
+			&lt;?php include "mortgageCalc/divLoad.php"; ?&gt;<br />
+
+		  </b>
+		  Alternately you can link to the index.php script in the mortgageCalc directory, and change styles to fit with your site.
+		  <p>
+		  Remember to use the correct path to the script if you are including.
+		  </p>
+		    
+		   
+		<hr>
+
+		<h3 id="files"><strong>Core Files and Structure</strong> - <a href="#toc">top</a></h3>
+
+		<p>This is an explanation of the files included and their purpose.</p>
+		
+		root folder
+		<ol>
+		  <li>admin.php - This page is the administrative page for the config file (config.php), it's purpose is to let you configure your settings without editing config.php by hand.</li>
+		  <li>calc-ws.php - This file is the ajax processing script for both the admin.php and the calculator files</li>
+		  <li>config.php - This is your main configuration file for the calculator settings with descriptions for each.  You can hand edit the entries or use the frontend admin.php script</li>
+		  <li>config.php.bac - This is a backup of the default settings for the config file, just in case you need it.</li>
+		  <li>divLoad.php - This is a script to make it easy to include the calculator in other pages, it consolidates everything needed into a div.</li>
+		  <li>index.php - This is the main calculator script, you can use this as is or modify it to fit into your theme.</li>
+		</ol>
+		
+		css folder
+		<ol>
+		  <li>style.css - This is the main stylesheet for the calculator, organized by section.  You may edit this to change the styles and colors of the calculator</li>
+		  <li>ie7.css - Even though ie7 is not supported, this is a small fix to allow it to be viewable in ie7.</li>
+		  <li>images - Image files used for the calculator</li>
+		</ol>
+		
+		js folder
+		<ol>
+		  <li>jquery-1.9.1.min.js - jQuery!</li>
+		  <li>jquery.betterTooltip.js - the tooltip functionality used in the calculator</li>
+		  <li>modal.js - Javascript for the modal windows, both the messages and the modal results option.</li>
+		  <li>pageLoad.js - These are all of the page scripts used including the ajax jsonp requests, the waiting function and all of the javascript partaining to the calculator</li>
+		  <li>popupScripts.js - These are the javascript pieces needed for the calculator if the results are displayed in a popup.</li>
+		  <li>scrolltable.js - This is the javascript file holding the amortization settings for scrolling and the stationary header row.</li>
+		</ol>
+		
+		examples
+		<ol>
+		  <li>index.php - This is an example of importing the main calculator into another page using the relative path of the calculators index.php file.</li>
+		  <li>testDiv.php - This is an example of using the divLoad.php script in another page, that shows some example surrounding divs.</li>
+		</ol>
+		
+		tcpdf
+		<ol>
+		   <li>files partaining to the tcpdf library (to create pdfs).</li>
+		</ol>
+
+		<hr>
+		
+		<h3 id="credits"><strong>E) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<p>I've used the following images, icons or other files as listed.
+		
+		<ul>
+			<li>TCPDF library for pdf creation (http://www.tcpdf.org/)</li>
+		</ul>
+		
+		<hr>
+		
+		<p>Once again, thank you so much for purchasing this script. As I said at the beginning, I'd be glad to help you if you have any questions relating to this script. No guarantees, but I'll do my best to assist you.
+		</p>
+		<p class="append-bottom alt large"><strong>leeb003</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

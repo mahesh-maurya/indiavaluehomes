@@ -1,0 +1,10 @@
+<div class="container2 padder">
+    <h3>Calculators</h3>
+    <div class="row">
+        <div class="col-md-4"><h4 class="calctitle" ng-click="changecalculator('calculator');">EMI Calculator</h4></div>
+        <div class="col-md-4"><h4 class="calctitle" ng-click="changecalculator('amortisation');">Amortisation Calculator</h4></div>
+        <div class="col-md-4"><h4 class="calctitle" ng-click="changecalculator('convertor');">Converter</h4></div>
+    </div>
+    
+    <div ng-include="calculatorscreen"></div>
+</div>

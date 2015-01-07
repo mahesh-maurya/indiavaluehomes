@@ -1,0 +1,86 @@
+<div class="content">
+  
+    <div class="container2">
+        <div class="row">
+            <div class="col-xs-3">
+                <div style="margin-top:29px;">
+<!--                    <img src="img/sidebanner.jpg">-->
+               <h5 ng-hide="videos==''" id="video">About Us <br><a href="#/videos">(More Videos)</a></h5>
+                <div class="row">
+<!--                    <div  ng-repeat="video in videos" class="property-desc col-xs-8">-->
+                       <div ng-repeat="video in videos">
+                       <div  class="col-xs-12">
+                        <iframe width="248" height="215" src="{{'//www.youtube.com/embed/'+video.youtube|trusted}}" frameborder="0" allowfullscreen>
+                        </iframe>
+                              </div>
+                               <div  class="col-xs-12">
+                               <p class="address label2">
+                                Location:
+                                <br>{{video.name}}
+                                <br>
+                                Description:
+                                <br>{{video.description}}
+                                </p>
+                                </div>
+
+                        </div>
+                        
+                   
+                </div>
+                </div>
+            </div>
+            <div class="col-xs-9" style="margin-top:28px;">
+<!--                <h5 style="visibility:hidden;"> Pre launch projects </h5>-->
+
+                <div class="smallslide">
+                    <div class="row project-list">
+                        <div class="col-xs-4 propertyclass" ng-repeat="property in properties">
+
+                            <a href="#/property/{{property.id}}">
+                                <div class="price">₹ {{property.price}}/sq ft</div>
+                                <div class="pricetag">
+                                    <img class="pricetag" src="img/price2.png">
+                                </div>
+                                <img src="{{template.adminimage+property.image}}" class="img" />
+                                <br>
+                                <div class="forsale">
+                                    <img src="{{template.adminimage+property.builderimage}}">
+                                </div>
+                                <div class="propertycontent">
+                                     <p><span class="title"> {{property.property}}</span> <i class="fa fa-map-marker"></i> {{property.locality}},{{property.city}}</p><p><img src="img/bedroom.png"><span class="title"> {{property.bedroom}}</span></p><p><span class="title">Starting From : {{property.pricestartingfrom}}</span></p></div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        
+<!--
+        <h5 ng-hide="blog==''" id="blog">Blog</h5>
+        <div class="row">
+        </div>
+-->
+<!--        <h5 ng-hide="contentlinks==''" id="contentlink">Content Links</h5>-->
+<!--
+        <div>
+            
+                    <p class="footercontentlinks">
+                        <a href="{{contentlink.url}}" class="footercontentlink" ng-repeat="contentlink in contentlinks">{{contentlink.title}}</a>
+                    </p>
+            
+        </div>
+-->
+<!--
+                <div class="row">
+
+                    <div class="col-xs-4" ng-repeat="video in videos">
+                        <img src="{{template.adminimage+image.image}}" class="img img-thumbnail">
+                    </div>
+
+                </div>
+-->
+    </div>
+</div>

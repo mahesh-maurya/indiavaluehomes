@@ -167,7 +167,7 @@ WHERE `property`.`id`='$property'")->row();
         $propertybuilder= $propertydetails->builder;
             
         $this->load->library('email');
-            $this->email->from('enquiry@indiavaluehomes.com', 'indiavaluehomes');
+            $this->email->from('info@indiavaluehomes.com', 'indiavaluehomes');
             $this->email->to($builderemailid);
             $this->email->subject('indiavaluehomes');
             $msg="User WishList For Property<br>

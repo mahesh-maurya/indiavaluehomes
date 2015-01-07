@@ -1,0 +1,36 @@
+<div class="sliderfooter">
+    <div class="container2">
+       <div class="cityrow scrollbar">
+        <ul class="nav nav-pills" >
+<li class="active"><a ng-click="searchpress(localitysel,propertytypesel,'')">All</a>
+            </li>
+            <li ng-repeat="city1 in city"><a ng-click="searchpress(localitysel,propertytypesel,city1.id)">{{city1.name}}</a>
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>
+
+<!--
+   <div class="sliderfooter">
+    <div class="container2">
+        <ul class="nav nav-pills">
+            <li class="active"><a ng-click="searchpress(localitysel,propertytypesel,'')">All</a>
+            </li>
+            <li><a ng-click="searchpress(localitysel,propertytypesel,1)">Mumbai</a>
+            </li>
+            <li><a ng-click="searchpress(localitysel,propertytypesel,29)">Pune</a>
+            </li>
+            <li><a ng-click="searchpress(localitysel,propertytypesel,7)">Bengaluru</a>
+            </li>
+            <li><a ng-click="searchpress(localitysel,propertytypesel,34)">Mangalore</a>
+            </li>
+            <li><a ng-click="searchpress(localitysel,propertytypesel,4)">Delhi</a>
+            </li>
+            <li><a ng-click="searchpress(localitysel,propertytypesel,33)">Chennai</a>
+            </li>
+            <li><a ng-click="searchpress(localitysel,propertytypesel,27)">Other Cities</a>
+            </li>
+        </ul>
+    </div>
+</div>-->

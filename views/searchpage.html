@@ -1,0 +1,38 @@
+<div class="content">
+    <div class="container2">
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="advertise">
+                    <img src="img/sidebanner.jpg">
+                </div>
+            </div>
+            <div class="col-xs-9">
+                <h5 style="visibility:hidden;"> Pre launch projects </h5>
+
+                <div class="smallslide">
+                    <div class="row project-list">
+                        <div class="col-xs-4 propertyclass" ng-repeat="property in properties">
+
+                            <a href="#/property/{{property.id}}">
+                                <div class="price">₹ {{property.price}}/sq ft</div>
+                                <div class="pricetag">
+                                    <img class="pricetag" src="img/price2.png">
+                                </div>
+                                <img src="{{template.adminimage+property.image}}" class="img" />
+                                <br>
+                                <div class="forsale">
+                                    <img src="{{template.adminimage+property.builderimage}}">
+                                </div>
+                                <div class="propertycontent">
+                                   <p><span class="title"> {{property.property}}</span> <i class="fa fa-map-marker"></i> {{property.locality}},{{property.city}}</p><p><img src="img/bedroom.png"><span class="title"> {{property.bedroom}}</span></p></div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                
+               
+            </div>
+        </div>
+    </div>
+</div>

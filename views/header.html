@@ -1,0 +1,48 @@
+<div class="header">
+   
+    <div class="container2">
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="logo">
+                    <a href="#/">
+                        <img src="img/logo.png" />
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-4"><div class="topads">Homes Starting from Rs. 10 Lakhs</div></div>
+            <div class="col-xs-4">
+                <div class="registerform {{showoffer}}" ng-controller="offerctrl">
+
+                    <h4 ng-click="registerclick()">Register for Offers</h4>
+                    <a ng-click="closeoffer();" ng-show="showoffer=='newshow'"><span style="
+    background: white;
+    width: 30px;
+    height: 30px;
+    padding: 1px 10px;
+    border-radius: 100%;
+    display: inline-block;
+    font-size: 22px;
+    position: absolute;
+    top: -13px;
+    left: 283px;
+    box-shadow: 0px 3px 8px #222;
+">x</span></a>
+<div  ng-class="showregister" class="contactthankyou" ng-show="contactsubmit" style="padding: 5%;">
+        Thank you. Your message has been sent.
+    </div>
+                    <div ng-class="showregister" ng-hide="contactsubmit" class="animated fadeInDown {{showoffer+'2'}}">
+                    
+                        <input type="text" placeholder="Name" ng-model="offername" class="form-control">
+                        <input type="text" placeholder="Email" ng-model="offeremail" class="form-control">
+                        <input type="text" placeholder="City" ng-model="offercity" class="form-control">
+                        <input type="text" placeholder="Mobile" ng-model="offermobile" class="form-control">
+                        <a class="btn btn-primary" ng-click="submitoffers(offername,offeremail,offercity,offermobile)">Submit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--
+<div class="blackout" ng-show="blackout==1"></div> -->

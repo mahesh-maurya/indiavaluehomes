@@ -1,0 +1,42 @@
+<div class="container2">
+    <div class="slider">
+
+        <div class="row">
+            <div class="col-xs-8">
+                <div class="searchbox">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <input type="text" placeholder="eg locality,builder project" ng-model="localitysel" />
+                        </div>
+                        <div class="col-xs-6">
+                            <select type="text" placeholder="property type" ng-model="propertytypesel">
+                                <option value="">Select a Property Type</option>
+
+                                <option ng-repeat="propertytype in propertytypes" value="{{propertytype.id}}">{{propertytype.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <select type="text" placeholder="property type" ng-model="citysel">
+                                <option value="">Select a City</option>
+                                <option ng-repeat="city in cities" value="{{city.id}}">{{city.name}}</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-6"><a class="btn btn-primary" ng-click="searchpress(localitysel,propertytypesel,citysel)">search</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--
+            <div class="col-xs-4">
+                <a href="#/twentyfive"><img src="img/booknow.png" style="
+                                                  margin-top: 65px;
+                                                  img;
+                                                  margin-left: 40px;
+                                                  "></a>
+            </div>
+-->
+        </div>
+    </div>
+</div>

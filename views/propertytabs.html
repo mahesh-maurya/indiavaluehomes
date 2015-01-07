@@ -1,0 +1,34 @@
+<div class="sliderfooter propertymenu2" ng-controller="ScrollCtrl">
+    <div class="container2" id="scrollArea">
+        <ul class="nav nav-pills makecapital propertytab">
+            
+<li>
+                <a ng-click="gotolocation()">location</a>
+            </li>
+            <li>
+                <a ng-click="gotopropertydetails()">details</a>
+            </li>
+            <li>
+                <a ng-click="gotoflats()">apartments</a>
+            </li>
+            
+            <li>
+                <a ng-click="gotoamenities()">amenities</a>
+            </li>
+            
+            <li>
+                <a ng-click="gotogallery()">gallery</a>
+            </li>
+            <li ng-hide="property.propertywalkthrough==''">
+                <a ng-click="gotowalkthrough()">walk through</a>
+            </li>
+            <li ng-hide="property.brochure==''">
+                <a href="{{template.adminimage+property.brochure}}" ng-click="#" class="brochure" target="_blank">Brochure</a>
+            </li>
+            <li ng-hide="property.propertyspecialoffers==''">
+                <a ng-click="specialoffers()" class="specialoffer">special offer</a>
+            </li>
+        </ul>
+        <p class="pull-right bread-crumb">Home > {{property.city}} > {{property.property}}</p>
+    </div>
+</div>
