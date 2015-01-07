@@ -223,9 +223,17 @@
             <a href="{{property.propertypanaroma}}" class="panaromatext" target="_blank" ng-show="property.propertypanaroma!=''">Click here for Panoromic View</a>
         </div>
     </div>
-    <h5 ng-hide="property.propertyspecialoffers==''" id="specialoffers">Special Offers</h5>
+<!--    <h5 ng-hide="property.propertyspecialoffers==''" id="specialoffers"></h5>-->
+  <div class="row">
+  <div class="col-md-3">
+   <img src="img/Offer-01.jpg">
+   </div>
+   <div class="col-md-8">
     <p ng-hide="property.propertyspecialoffers==''" class="property-desc" style="font-weight: bold;
-font-size: 130%;padding: 0 12px;">{{property.propertyspecialoffers}}</p>
+font-size: 130%;padding-top: 143px;padding-left: 25px;">{{property.propertyspecialoffers}}</p>
+    </div>
+    
+    </div>
 
     <h5 id="gallery-details" ng-hide="propertyconstructionupdate.length==0" >CONSTRUCTION UPDATE</h5>
     <div class="property-gallery ">

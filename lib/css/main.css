@@ -150,6 +150,8 @@ address {
     background: #E4E4E4;
     padding: 10px;
     color: rgb(138, 138, 138);
+    /* margin-left: 15px; */
+    /* margin-right: -4px; */
 }
 .footer {
     font-size: 80%;
@@ -495,10 +497,10 @@ a {
     cursor: pointer;
 }
 .topads {
-    padding: 17px;
+    padding: 10px;
     font-size: 130%;
     text-align: center;
-    margin-top: 23px;
+    margin-top: -2px;
     color: #2D3D94;
     font-weight: bold;
 }
