@@ -478,6 +478,7 @@ phonecatControllers.controller('offerctrl',
         };
         var clearform = function () {
             $scope.showregister = "hidden";
+        	window.location.href="http://www.indiavaluehomes.com/thankyou.html";
         };
         $scope.contactsubmit=false;
         $scope.submitoffers = function (name, email, city, contact) {
