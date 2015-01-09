@@ -39,6 +39,12 @@
                     </div>	
 					
 					<div class="form-group">
+						<label class="col-sm-2 control-label">Order</label>
+						<div class="col-sm-4">
+						  <input type="text" id="" name="order" class="form-control" value="<?php echo set_value('order',$before->order); ?>">
+						</div>
+					</div>
+					<div class="form-group">
 						<label class="col-sm-2 control-label">&nbsp;</label>
 						<div class="col-sm-4">	
 							<button type="submit" class="btn btn-info">Submit</button>

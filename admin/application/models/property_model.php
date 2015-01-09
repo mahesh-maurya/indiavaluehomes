@@ -425,14 +425,14 @@ class Property_model extends CI_Model
 	}
     public function viewpropertyapartment($id)
 	{
-		$query="SELECT `apartment`.`id` as `id`,`apartment`.`Config` as `config`,`apartment`.`area` as `area`,`apartment`.`price`,`apartment`.`floorplan` FROM `apartment` WHERE `apartment`.`property`='$id'";
+		$query="SELECT `apartment`.`id` as `id`,`apartment`.`Config` as `config`,`apartment`.`area` as `area`,`apartment`.`price`,`apartment`.`floorplan`,`apartment`.`order` FROM `apartment` WHERE `apartment`.`property`='$id'";
 	   
 		$query=$this->db->query($query)->result();
 		
 		return $query;
 	}
     
-    public function createapartment($id,$config,$area,$price,$floorplan)
+    public function createapartment($id,$config,$area,$price,$floorplan,$order)
     {
     
 		$data  = array(
@@ -440,6 +440,7 @@ class Property_model extends CI_Model
 			'config' => $config,
 			'area' => $area,
 			'price' => $price,
+			'order' => $order,
 			'floorplan' => $floorplan
 		);
 		$query=$this->db->insert( 'apartment', $data );
@@ -450,18 +451,27 @@ class Property_model extends CI_Model
 			return  1;
 	}
     
-    public function editaprtment($id,$config,$area,$price,$floorplan)
+    public function editaprtment($id,$config,$area,$price,$floorplan,$order)
 	{
 		$data  = array(
 			'config' => $config,
 			'area' => $area,
 			'price' => $price,
+			'order' => $order,
 			'floorplan' => $floorplan
 		);
 		$this->db->where( 'id', $id );
 		$query=$this->db->update( 'apartment', $data );
 		
 		return 1;
+	}
+    
+	public function getfloorplanbypropertyid($id)
+	{
+		$query=$this->db->query("SELECT `floorplan` FROM `apartment` WHERE `id`='$id'")->row();
+		
+		
+		return $query;
 	}
     
     public function getorderdropdown()
@@ -550,7 +560,7 @@ class Property_model extends CI_Model
 		INNER JOIN `property` ON `property`.`builder`=`builder`.`id` AND `builder` AND `builder`.`id`='$builder'
 		INNER JOIN `propertyimage` ON `propertyimage`.`property`
 		")->result();
-$query['apartment']=$this->db->query("SELECT `apartment`.`id` as `id`,`apartment`.`property`,`property`.`name` AS `propertyname`,`apartment`.`Config` as `config`,`apartment`.`area` as `area`,`apartment`.`price`,`apartment`.`floorplan` FROM `apartment` INNER JOIN `property` ON `property`.`id`=`apartment`.`property` WHERE `property`='$property'")->result();
+$query['apartment']=$this->db->query("SELECT `apartment`.`id` as `id`,`apartment`.`property`,`apartment`.`order`,`property`.`name` AS `propertyname`,`apartment`.`Config` as `config`,`apartment`.`area` as `area`,`apartment`.`price`,`apartment`.`floorplan` FROM `apartment` INNER JOIN `property` ON `property`.`id`=`apartment`.`property` WHERE `property`='$property'")->result();
 		$query['propertyimage']=$this->db->query("SELECT `image`,`order`,`is_default` FROM `propertyimage` WHERE `property`='$property'")->result();
 		$query['propertyconstructionupdate']=$this->db->query("SELECT `image`,`order` FROM `propertyconstructionupdate` WHERE `property`='$property'")->result();
 $query['propertyapartment']=$this->db->query("SELECT * FROM `apartment`")->result();

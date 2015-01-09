@@ -99,7 +99,60 @@ class Site extends CI_Controller
 		$data[ 'title' ] = 'Create Apartment';
 		$this->load->view( 'template', $data );	
 	}
-    function createapartmentsubmit()
+//    function createapartmentsubmit()
+//	{
+//		$access = array("1");
+//		$this->checkaccess($access);
+//        $id=$this->input->get("id");
+//		$this->form_validation->set_rules('config','Configuration','trim|required');
+//		$this->form_validation->set_rules('area','Area','trim|required');
+//		$this->form_validation->set_rules('price','Price','trim');
+//		$this->form_validation->set_rules('order','order','trim');
+//		
+//		if($this->form_validation->run() == FALSE)	
+//		{
+//			$data['alerterror'] = validation_errors();
+//			$data[ 'status' ] =$this->user_model->getstatusdropdown();
+//			$data['accesslevel']=$this->user_model->getaccesslevels();
+//			$data['page']='createapartment';
+//			$data['title']='Create New Apartment';
+//			$this->load->view('template',$data);
+//		}
+//		else
+//		{
+//			$config=$this->input->post('config');
+//			$area=$this->input->post('area');
+//			$price=$this->input->post('price');
+//			$order=$this->input->post('order');
+//            
+////		      $this->load->library( 'upload', $config );
+////			$filename="floorplan";
+//			 
+//            $config['upload_path'] = './uploads/';
+//			$config['allowed_types'] = 'gif|jpg|png|jpeg';
+//			$this->load->library('upload', $config);
+//			$filename="floorplan";
+//			$floorplan="";
+//			if (  $this->upload->do_upload($filename))
+//			{
+//				$uploaddata = $this->upload->data();
+//				$floorplan=$uploaddata['file_name'];
+//			}
+//            
+//			
+//			if($this->property_model->createapartment($id,$config,$area,$price,$floorplan,$order)==0)
+//			$data['alerterror']="New Apartment could not be created.";
+//			else
+//			$data['alertsuccess']="Apartment created Successfully.";
+//			
+//			$data['table']=$this->property_model->viewpropertyapartment($id);
+//$data['other']="id=$id";
+//			$data['redirect']="site/viewpropertyapartment";
+//			//$data['other']="template=$template";
+//			$this->load->view("redirect",$data);
+//		}
+//    }
+	function createapartmentsubmit()
 	{
 		$access = array("1");
 		$this->checkaccess($access);
@@ -113,6 +166,7 @@ class Site extends CI_Controller
 		$this->form_validation->set_rules('config','Configuration','trim|required');
 		$this->form_validation->set_rules('area','Area','trim|required');
 		$this->form_validation->set_rules('price','Price','trim');
+		$this->form_validation->set_rules('order','order','trim');
 		
 		if($this->form_validation->run() == FALSE)	
 		{
@@ -128,6 +182,7 @@ class Site extends CI_Controller
 			$config=$this->input->post('config');
 			$area=$this->input->post('area');
 			$price=$this->input->post('price');
+			$order=$this->input->post('order');
             
 		      $this->load->library( 'upload', $config );
 			$filename="floorplan";
@@ -145,7 +200,7 @@ class Site extends CI_Controller
 			}
            
 			
-			if($this->property_model->createapartment($id,$config,$area,$price,$floorplan)==0)
+			if($this->property_model->createapartment($id,$config,$area,$price,$floorplan,$order)==0)
 			$data['alerterror']="New Apartment could not be created.";
 			else
 			$data['alertsuccess']="Apartment created Successfully.";
@@ -218,6 +273,7 @@ $id2=$this->input->get("id2");
 		$this->form_validation->set_rules('config','Configuration','trim|required');
 		$this->form_validation->set_rules('area','Area','trim|required');
 		$this->form_validation->set_rules('price','Price','trim');
+		$this->form_validation->set_rules('order','order','trim');
 		
 		if($this->form_validation->run() == FALSE)	
 		{
@@ -233,6 +289,7 @@ $id2=$this->input->get("id2");
 			$config=$this->input->post('config');
 			$area=$this->input->post('area');
 			$price=$this->input->post('price');
+			$order=$this->input->post('order');
 			$id=$this->input->get_post('id');
            
 			$this->load->library('upload', $config);
@@ -244,7 +301,14 @@ $id2=$this->input->get("id2");
 				$floorplan=$uploaddata['file_name'];
 			}
 			
-			if($this->property_model->editaprtment($id,$config,$area,$price,$floorplan)==0)
+            
+            if($floorplan=="")
+            {
+            $floorplan=$this->property_model->getfloorplanbypropertyid($id);
+               // print_r($floorplan);
+                $floorplan=$floorplan->floorplan;
+            }
+			if($this->property_model->editaprtment($id,$config,$area,$price,$floorplan,$order)==0)
 			$data['alerterror']="Apartment Editing was unsuccesful";
 			else
 			$data['alertsuccess']="Apartment edited Successfully.";
