@@ -32,6 +32,7 @@
     border-bottom: 2px solid rgb(193, 180, 180);
     padding-bottom: 7px;
 }
+
 .abc {
     position: absolute;
     /* z-index: 2; */
@@ -161,12 +162,16 @@ address {
     color: black;
     padding-bottom: 35px;
     background: #ccc;
+position: relative;
+    z-index: -1;
 }
 .footercenter {
     font-size: 80%;
     padding-top: 10px;
     color: black;
     background: #E4E4E4;
+   position: relative;
+z-index: -1;
 }
 .footer {
     font-size: 80%;
@@ -175,6 +180,7 @@ address {
     padding-bottom: 35px;
     background: #ccc;
     position: relative;
+    z-index: -1;
 }
 .footer .nav>li>a:hover,
 .footer .nav>li>a:focus,
@@ -577,6 +583,10 @@ a.footercontentlink+a.footercontentlink {
 }
 .cityrow.scrollbar ul {
     width: 2698px;
+}
+.footer-bottom {
+position: relative;
+z-index: -1;
 }
 .cityrow
 {
